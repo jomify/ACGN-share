@@ -5,12 +5,15 @@ ACGN Share is a simple website for sharing open source games and related documen
 ## Structure
 
 - `site/index.html` – Home page
-- `site/games.html` – Example list of games
-- `site/docs.html` – Resource links and documents
+- `site/games.html` – Game list (data loaded from `games.json`)
+- `site/docs.html` – Resource links (data loaded from `docs.json`)
 - `site/style.css` – Basic styles
+- `site/scripts.js` – JavaScript for loading data
+- `site/games.json` – Example game data
+- `site/docs.json` – Example document links
 
 ## Usage
 
-Open `site/index.html` in your browser or host the contents of the `site` directory on any static file server. The current pages contain example entries that you can replace with your own games and materials.
+Open `site/index.html` in your browser or host the contents of the `site` directory on any static file server. Edit the JSON files to add your own games and documents; the pages will update automatically.
 
 Contributions are welcome!

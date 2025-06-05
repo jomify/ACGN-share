@@ -54,3 +54,15 @@ a {
     padding: 10px;
     border: 1px solid #ccc;
 }
+
+#docs-list {
+    list-style: none;
+    padding: 0;
+}
+
+#docs-list li {
+    background: #fff;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
