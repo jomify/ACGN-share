@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACGN Hub - 动漫专区</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="top-nav">
+            <div class="logo">ACGN Hub</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="games.html">游戏</a></li>
+                <li><a href="anime.html">动漫</a></li>
+                <li><a href="forum.html">论坛</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" placeholder="搜索动漫">
+                <button>搜索</button>
+            </div>
+        </nav>
+        <div class="hero" style="background-image: url('https://picsum.photos/seed/animehero/1200/400');">
+            <h1>动漫专区</h1>
+            <p>一起追番吧！</p>
+        </div>
+    </header>
+    <main>
+        <section class="anime-section">
+            <h2>动漫列表</h2>
+            <div class="anime-grid">
+                <!-- 动漫示例卡片 -->
+                <div class="anime-card">
+                    <div class="anime-img" style="background-image:url('https://picsum.photos/seed/anime01/400/250');"></div>
+                    <h3>动漫标题 1</h3>
+                    <p>简单的简介和描述。</p>
+                    <a class="game-link" href="#">查看详情</a>
+                </div>
+                <div class="anime-card">
+                    <div class="anime-img" style="background-image:url('https://picsum.photos/seed/anime02/400/250');"></div>
+                    <h3>动漫标题 2</h3>
+                    <p>动人心弦的故事等待你。</p>
+                    <a class="game-link" href="#">查看详情</a>
+                </div>
+                <div class="anime-card">
+                    <div class="anime-img" style="background-image:url('https://picsum.photos/seed/anime03/400/250');"></div>
+                    <h3>动漫标题 3</h3>
+                    <p>让人欲罢不能的连载。</p>
+                    <a class="game-link" href="#">查看详情</a>
+                </div>
+            </div>
+            <div class="video-player">
+                <h3>在线预览</h3>
+                <video controls>
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    您的浏览器不支持此视频格式。
+                </video>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 ACGN Hub. 分享你心爱的番剧！</p>
+    </footer>
+</body>
+</html>

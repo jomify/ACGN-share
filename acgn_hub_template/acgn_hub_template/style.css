@@ -1,0 +1,442 @@
+/* style.css: ACGN Hub website template inspired by B站和Steam
+   本样式表混合了B站的清新配色和Steam的暗色质感。变量定义在开头方便调整，
+   并支持轻、暗两种主题，用于不同的页面类型（如游戏和动漫）。 */
+
+:root {
+    --primary-color: #00A1E9; /* B站蓝 */
+    --secondary-color: #FB7299; /* B站粉 */
+    --dark-bg: #1B2838; /* Steam暗背景 */
+    --dark-card-bg: #2A475E; /* Steam卡片背景 */
+    --light-bg: #F5F7FA; /* 浅色背景 */
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+    --card-radius: 8px;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 全局重置 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* 顶部导航栏 */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    padding: 0.75rem 1.5rem;
+    color: var(--text-light);
+}
+
+.top-nav .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.top-nav .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.top-nav .nav-links li {
+    margin-left: 1.5rem;
+}
+
+.top-nav .nav-links a {
+    color: var(--text-light);
+    font-weight: 500;
+    transition: opacity 0.2s ease-in-out;
+    padding-bottom: 0.25rem;
+}
+
+.top-nav .nav-links a:hover {
+    opacity: 0.8;
+}
+
+/* 激活链接样式 */
+.top-nav .nav-links a.active {
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+}
+
+.search-container input {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.search-container button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.search-container button:hover {
+    background-color: #273c4f;
+}
+
+/* 横幅部分 */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1)), url('https://picsum.photos/seed/hero/1200/400');
+    background-size: cover;
+    background-position: center;
+    color: var(--dark-bg);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* 精选部分 */
+.featured-section {
+    padding: 2rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.featured-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--dark-bg);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-image {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin: 0.75rem 1rem 0.5rem 1rem;
+    color: var(--dark-bg);
+}
+
+.card p {
+    font-size: 0.9rem;
+    margin: 0 1rem 1rem 1rem;
+    color: #555;
+}
+
+/* 社区部分 */
+.community-section {
+    padding: 2rem 1rem;
+    background-color: var(--light-bg);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.community-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--dark-bg);
+}
+
+.forum-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.forum-preview .post {
+    background-color: #ffffff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    padding: 1rem;
+}
+
+.forum-preview .post h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.forum-preview .post p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.6rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* 页脚 */
+footer {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 3rem;
+}
+
+/* 暗色主题页面 */
+body.dark {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+/* 页面通用部分 */
+.games-section,
+.anime-section,
+.forum-section {
+    padding: 2rem 1rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.games-section h2,
+.anime-section h2,
+.forum-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* 游戏网格 */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.game-card {
+    background-color: var(--dark-card-bg);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    padding-bottom: 1rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+}
+
+.game-img {
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+}
+
+.game-card h3 {
+    font-size: 1.2rem;
+    margin: 0.75rem 1rem 0.5rem 1rem;
+    color: var(--text-light);
+}
+
+.game-card p {
+    font-size: 0.9rem;
+    margin: 0 1rem;
+    color: #d6e2f2;
+}
+
+.game-link {
+    display: inline-block;
+    margin: 0.75rem 1rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.game-link:hover {
+    text-decoration: underline;
+}
+
+/* 动漫网格 */
+.anime-section {
+    background-color: var(--light-bg);
+}
+
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.anime-card {
+    background-color: #ffffff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    padding-bottom: 1rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.anime-card:hover {
+    transform: translateY(-4px);
+}
+
+.anime-img {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.anime-card h3 {
+    font-size: 1.1rem;
+    margin: 0.75rem 1rem 0.5rem 1rem;
+    color: var(--dark-bg);
+}
+
+.anime-card p {
+    font-size: 0.9rem;
+    margin: 0 1rem;
+    color: #555;
+}
+
+/* 视频播放器 */
+.video-player {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.video-player video {
+    width: 100%;
+    max-width: 800px;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+}
+
+/* 论坛页面样式 */
+.thread-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.thread {
+    background-color: #ffffff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    padding: 1rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.thread.dark {
+    background-color: var(--dark-card-bg);
+    color: var(--text-light);
+    border-left-color: var(--secondary-color);
+}
+
+.thread h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.thread .meta {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.thread.dark .meta {
+    color: #b0c4de;
+}
+
+/* 发帖表单 */
+.post-form {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: var(--card-shadow);
+    border-radius: var(--card-radius);
+}
+
+.post-form.dark {
+    background-color: var(--dark-card-bg);
+}
+
+.post-form input,
+.post-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.post-form.dark input,
+.post-form.dark textarea {
+    background-color: #243b55;
+    border: 1px solid #3a6073;
+    color: var(--text-light);
+}
+
+.post-form button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.post-form button:hover {
+    background-color: var(--secondary-color);
+}
